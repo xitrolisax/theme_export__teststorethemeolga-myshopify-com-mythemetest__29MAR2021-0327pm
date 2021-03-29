@@ -1,0 +1,36 @@
+<div class="drawer-menu-container" id="drawer-menu-container">
+    <div class="col-lg-12">
+        <button class="close-menu-button" id="close-menu-button">
+            <img src="{{ close_button | img_url : '48x'}}" />
+        </button>
+    </div>
+    <div class="menu">
+        <div class="product-menu">
+
+            <ul class="">
+                {%- for link in product_menu.links -%}
+
+                <li>
+
+                    <img class="product-image-appear" src="https://cdn.shopify.com/s/files/1/0558/3365/7515/products/bottle_52333fd3-9b0c-483a-b651-c74759bec304_large.png?v=1617027228" />
+
+                    <a href="{{ link.url }}" class="">{{ link.title }}</a>
+
+                </li>
+
+                {%- endfor -%}
+
+            </ul>
+        </div>
+
+        <div class="main-menu">
+            <ul class="">
+                {%- for link in main_menu.links -%}
+                <li><a href="{{ link.url }}" class="">{{ link.title }}</a></li>
+
+                {%- endfor -%}
+
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,530 @@
+@font-face {
+	font-family: 'OggTextBookItalic';
+	src: url("https://cdn.shopify.com/s/files/1/0558/3365/7515/files/OggTextBookItalic.woff2?v=1616858581") format("woff2");
+}
+
+@font-face {
+	font-family: 'Ogg-Regular';
+	src: url("https://cdn.shopify.com/s/files/1/0558/3365/7515/files/Ogg-Regular.woff2?v=1616858580") format("woff2");
+}
+
+@font-face {
+	font-family: 'Ogg-Roman';
+	src: url("https://cdn.shopify.com/s/files/1/0558/3365/7515/files/Ogg-Roman.woff2?v=1616858580") format("woff2");
+}
+
+@font-face {
+	font-family: 'UniversExtendedRegular';
+	src: url("https://cdn.shopify.com/s/files/1/0558/3365/7515/files/UniversExtendedRegular.woff2?v=1616858580") format("woff2");
+}
+
+@font-face {
+	font-family: 'Univers';
+	src: url("https://cdn.shopify.com/s/files/1/0558/3365/7515/files/3562B4_2_0.woff2?v=1616863598") format("woff2");
+}
+
+@font-face {
+	font-family: '3562B4_2_0';
+	src: url("https://cdn.shopify.com/s/files/1/0558/3365/7515/files/3562B4_2_0.woff2?v=1616863598") format("woff2");
+}
+
+html,
+body {
+	padding: 0px;
+	overflow: hidden;
+	height: 100%;
+}
+
+.product-image-appear {
+	visibility: hidden;
+	height: 57px;
+	vertical-align: baseline;
+}
+
+.close-menu-button {
+	height: 50px;
+}
+
+.link {
+	text-decoration: none;
+}
+
+.empty-cart-wrapper {
+	text-align: center;
+	height: 60%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.empty-cart-div {
+	border: 2px solid #000000;
+	box-sizing: border-box;
+	border-radius: 3px;
+	height: 39px;
+	width: 90%;
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 50px;
+}
+
+.site-header {
+	background-color: rgba(0, 0, 0, 0);
+	max-height: 80px;
+	position: absolute;
+	width: 100%;
+}
+
+.subtotal {
+	float: left;
+	font-size: 11px;
+	line-height: 20px;
+	letter-spacing: 0.458333px;
+	margin-top: 5px;
+}
+
+.line {
+	width: 100%;
+	border: 1px solid #272727;
+}
+
+.subtotal-price {
+	float: right;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 31px;
+	letter-spacing: 0.777778px;
+}
+
+.subtotal-wrapper {
+	width: 90%;
+	font-family: Univers;
+	text-transform: uppercase;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.checkout-btn {
+	width: 100%;
+	height: max-content;
+	position: absolute;
+	bottom: 0;
+	padding-bottom: 50px;
+}
+
+.cart-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.cart-table {
+	width: 100%;
+}
+
+.item-variant {
+	font-family: Univers;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.item-title {
+	font-family: "Ogg-Regular";
+	color: black;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 32px;
+	text-decoration: none;
+}
+
+.item-title:hover {
+	color: black;
+}
+
+.empty-cart-label {
+	font-family: "Ogg-Regular";
+	font-style: normal;
+	font-weight: normal;
+	font-size: 40.32px;
+	line-height: 53px;
+}
+
+.item-qty {
+	width: 25px;
+	text-align: center;
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.in-cart-items-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 150px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
+	height: max-content;
+}
+
+.item-app,
+.item-sub {
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.darklogo {
+	height: 55px;
+}
+
+.checkout-button {
+	width: 90%;
+	background-color: black;
+	border-radius: 3px;
+	border: none;
+	text-align: center;
+	height: 39px;
+}
+
+.close-menu-button,
+.open-menu-button,
+.open-cart-button,
+.close-cart-button {
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	height: 50px;
+}
+
+.close-cart-button {
+	position: fixed;
+	right: 20px;
+}
+
+.close-menu-button {
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+.cart-nav-wrapper {
+	width: 90%;
+	display: flex;
+	justify-content: center;
+	height: 60px;
+	margin-top: 49px;
+}
+
+.line2 {
+	width: 121.76px;
+	border: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 38.5px;
+}
+
+.drawer-cart-container {
+	height: 100%;
+	background-color: white;
+	width: 35%;
+	position: absolute;
+	right: 0px;
+}
+
+.drawer-menu-container {
+	height: 100%;
+	background-color: white;
+	position: fixed;
+	width: 50%;
+}
+
+.menu {
+	margin-top: 20%;
+}
+
+ul {
+	padding-left: 0px;
+}
+
+.product-menu,
+.main-menu {
+	display: block;
+}
+
+.product-menu {
+	line-height: 90px;
+	font-size: 60px;
+	font-family: "Ogg-Regular";
+}
+
+.main-menu {
+	font-size: 14px;
+	line-height: 30px;
+	font-family: "Univers";
+	text-transform: uppercase;
+}
+
+.menu li,
+.menu a {
+	list-style-type: none;
+	text-align: center;
+	color: black;
+	text-decoration: none;
+}
+
+.row {
+	margin: 10px;
+}
+
+.menu-image,
+.logo-image,
+.cart-image {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.menu-image {
+	height: 48px;
+}
+
+.logo-image {
+	height: 49px;
+}
+
+.cart-image {
+	height: 28px;
+}
+
+.account-div {
+	font-family: 'Univers';
+	font-size: 13px;
+	line-height: 15px;
+	text-align: right;
+	letter-spacing: 0.52px;
+}
+
+.menu-image-div,
+.logo-image-div,
+.cart-image-div,
+.account-div {
+	height: max-content;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.hero-section {
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	position: fixed;
+	z-index: -1;
+}
+
+.hero-div {
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+}
+
+.hero-text-wrapper {
+	padding-top: 20%;
+	height: 100%;
+	padding-left: 88px;
+}
+
+.hero-text-wrapper h1 {
+	font-size: 97px;
+}
+
+.hero-heading-2 {
+	font-family: 'OggTextBookItalic';
+	font-size: 97px;
+	line-height: 113px;
+}
+
+.hero-heading {
+	font-family: 'Ogg-Roman';
+	font-size: 97px;
+	line-height: 113px;
+}
+
+.hero-par-1 {
+	font-family: 'Univers';
+	font-size: 16px;
+	line-height: 25px;
+}
+
+.hero-par-div {
+	width: 20%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.hero-par-2 {
+	font-family: 'Univers';
+	font-size: 11px;
+	line-height: 20px;
+	letter-spacing: 0.458333px;
+	text-transform: uppercase;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.hero-button {
+	width: 290px;
+	height: 39px;
+	border-radius: 3px;
+	border: none;
+}
+
+.hero-button a {
+	text-decoration: none;
+	font-family: Univers;
+	font-size: 14px;
+	line-height: 16px;
+	text-align: center;
+	letter-spacing: 1.16667px;
+	text-transform: uppercase;
+}
+
+.hero-par-2-div {
+	margin: 1px;
+}
+
+@media screen and (max-width:575px) {
+	.site-header {
+		margin-top: 20px;
+	}
+	.menu-image {
+		height: 40px;
+	}
+	.logo-image {
+		height: 24px;
+	}
+	.cart-image {
+		height: 28px;
+	}
+	.hero-section {
+		height: 414px;
+	}
+	.hero-div {
+		background-position: 90% 0%;
+		position: absolute;
+	}
+	.gradientwrapper {
+		height: 489px;
+		width: 100%;
+		background: linear-gradient(180deg, #685A8F 0%, #9178B5 61.78%);
+		position: absolute;
+		z-index: -2;
+		margin-top: 50vh;
+	}
+	.hero-text-wrapper {
+		padding: 0;
+		text-align: center;
+		margin-top: 53vh;
+	}
+	.hero-text-wrapper h1 {
+		font-size: 60px;
+		line-height: 68px;
+		text-align: center;
+	}
+	.hero-par-div {
+		width: 60%;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}
+	.hero-part-div h4 {
+		font-size: 16px;
+		line-height: 25px;
+	}
+	.hero-par-2 {
+		font-size: 7px;
+		line-height: 20px;
+		letter-spacing: 0.458333px;
+	}
+	.hero-button {
+		width: 80%;
+		text-align: center;
+	}
+}
+
+@media screen and (min-width:576px) and (max-width: 1440px) {
+	.hero-par-div {
+		width: 60%;
+	}
+	.hero-div {
+		background-position: center;
+	}
+}
+
+@media screen and (min-width: 2560px) {
+	.hero-div {
+		background-position: center;
+	}
+	.hero-text-wrapper h1 {
+		font-size: 291px;
+		line-height: 339px;
+	}
+	.hero-par-1 {
+		font-size: 48px;
+		line-height: 75px;
+	}
+	.hero-par-2 {
+		font-size: 30px;
+		line-height: 40px;
+		margin-bottom: 30px;
+	}
+	.hero-button {
+		width: 25%;
+		height: 66px;
+	}
+	.hero-button a {
+		font-size: 30px;
+	}
+	.hero-par-div {
+		width: 40%;
+	}
+}
+
+.cart-drawer {
+	float: right;
+	background-color: white;
+	height: 100%;
+	width: 0;
+}
+
+@media screen and (max-width: 767px) {
+	.drawer-cart-container {
+		width: 100%;
+		background-color: #F2F2F2;
+	}
+	.drawer-menu-container {
+		width: 100%;
+		background-color: #F2F2F2;
+	}
+	.product-menu {
+		font-size: 30px;
+		line-height: 70px;
+		font-family: "OggTextBookItalic";
+	}
+	.main-menu {
+		font-size: 14px;
+		line-height: 30px;
+		text-align: center;
+		letter-spacing: 1.16667px;
+	}
+	.product-menu a:hover {
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+	}
+	.product-menu li:hover>.product-image-appear {
+		visibility: visible;
+	}
+}

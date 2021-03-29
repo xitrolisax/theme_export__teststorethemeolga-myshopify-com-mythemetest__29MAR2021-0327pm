@@ -1,0 +1,143 @@
+
+<div data-section-id="{{ section.id }}" data-section-type="hero-section" class="hero-section">
+  <div class="hero-div">
+    
+  <div class="hero-text-wrapper">
+      <h1 class="hero-heading" style="color:{{ section.settings.color_text }}">{{ section.settings.herotext }}</h1>
+      <h1 class="hero-heading-2" style="color:{{ section.settings.color_text2 }}">{{ section.settings.herotext2 }}</h1>
+    <div class="hero-par-div">
+     <h4 class="hero-par-1" style="color:{{ section.settings.color_par }}">{{ section.settings.heroparagraph }}</h4>
+    </div>
+    <div class="hero-par-2-div">
+    <h4 class="hero-par-2" style="color:{{ section.settings.color_par2 }}">{{ section.settings.heroparagraph2 }}</h4>
+     </div>
+    <button class="hero-button" id="hero-button">
+    <a id="hero-button-text" href="{{ section.settings.button-link }}" style="color: {{ section.settings.button-text-color }}; background-color {{ section.settings.button-color }} ">{{ section.settings.hero-button }}</a>
+    </button>
+    </div>
+    </div>
+  
+</div>
+<div class="gradientwrapper">
+  </div>
+
+{% schema %}
+  {
+    "name": "Landing hero",
+    "class": "landing-hero",
+    "settings": [
+      {
+        "id": "heroimage",
+        "type": "image_picker",
+        "label": "Hero image"
+      },
+		{
+        "id": "heroimagemobile",
+        "type": "image_picker",
+        "label": "Hero image mobile"
+      },
+      {
+        "id": "herotext",
+        "type": "text",
+        "label": "Hero text"
+      },
+	
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text Color",
+        "default": "#000000"
+      },
+		{
+        "id": "herotext2",
+        "type": "text",
+        "label": "Hero text 2"
+      },
+	
+      {
+        "type": "color",
+        "id": "color_text2",
+        "label": "Text Color 2",
+        "default": "#000000"
+      },
+	  {
+        "id": "heroparagraph",
+        "type": "text",
+        "label": "Hero paragraph"
+      },
+	
+      {
+        "type": "color",
+        "id": "color_par",
+        "label": "Paragraph Color",
+        "default": "#000000"
+      },
+{
+        "id": "heroparagraph2",
+        "type": "text",
+        "label": "Hero paragraph 2"
+      },
+	
+      {
+        "type": "color",
+        "id": "color_par2",
+        "label": "Paragraph Color 2",
+        "default": "#000000"
+      },
+    {
+    "id": "button-link",
+    "type": "url",
+    "label": "Button URL"
+    },
+    {
+    "id": "hero-button",
+    "type": "text",
+    "label": "Button text"
+    },
+	{
+    "id": "hero-button-mobile",
+    "type": "text",
+    "label": "Mobile button text"
+    },
+	{
+        "type": "color",
+        "id": "button-text-color",
+        "label": "Button Text Color",
+        "default": "#000000"
+      },
+	{
+        "type": "color",
+        "id": "button-color",
+        "label": "Button Color",
+        "default": "#000000"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  @media screen and (max-width:575px) {
+    .hero-div {
+    background-image: url('{{ section.settings.heroimagemobile | img_url: 'master' }}');
+    }
+  }
+  @media screen and (min-width:576px) {
+    .hero-div {
+    background-image: url('{{ section.settings.heroimage | img_url: 'master' }}');
+    }
+  }
+</style>
+
+<script type="text/javascript">
+function buttonText(x) {
+            if (x.matches) {
+                document.getElementById("hero-button-text").innerHTML = {{ section.settings.hero-button-mobile | json }};
+            } 
+          else {
+          		document.getElementById("hero-button-text").innerHTML = {{ section.settings.hero-button | json }};
+          }
+        }
+        var x = window.matchMedia("(max-width: 575px)")
+        buttonText(x)
+x.addListener(buttonText)
+</script>

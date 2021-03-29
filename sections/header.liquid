@@ -1,0 +1,152 @@
+<div data-section-id="{{ section.id }}" data-section-type="header-section" data-header-section>
+    <header class="site-header" role="banner">
+
+        <div class="row">
+
+            <div class="menu-image-div col-lg-1 col-md-2 col-sm-1 col-xs-1">
+                <button class="open-menu-button" id="open-menu-button">
+                    <img src="{{ section.settings.menuImage | img_url: '48x48' }} " class="menu-image" />
+                </button>
+            </div>
+
+            <div class="logo-image-div {% if shop.customer_accounts_enabled %} col-lg-9 col-md-7 col-sm-8 col-xs-8 {% else %} col-lg-10 col-md-8 col-sm-8 col-xs-8 {% endif %}">
+                <a href="{{ routes.root_url }}">
+                    <img src="{{ section.settings.logo | img_url: '48x48' }}" class="logo-image" />
+                </a>
+            </div>
+            {% if shop.customer_accounts_enabled %}
+            <div class="account-div col-lg-1 col-md-2 col-sm-1 col-xs-1">
+                {% if customer %}
+                <a href="{{ routes.account_url }}" class="link" style="color:{{ section.settings.link-color }}">
+
+                    My account
+                </a>
+                {% else %}
+                <a href="{{ routes.account_login_url }}" class="link" style="color:{{ section.settings.link-color }}">
+
+                    Log In
+                </a>
+            </div>
+            {% endif %}
+            {% endif %}
+            <div class="cart-image-div col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                <button class="open-cart-button" id="open-cart-button">
+                    <img src="{{ section.settings.cart | img_url: '48x48' }}" class="cart-image" />
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+</div>
+
+{%- liquid assign main_menu = linklists[section.settings.main_menu_link_list] -%}
+{%- liquid assign product_menu = linklists[section.settings.product_menu_link_list] -%}
+{%- liquid assign close_button = section.settings.logo-close -%}
+{%- render 'drawer-menu',
+  main_menu: main_menu,
+  product_menu: product_menu,
+  close_button: close_button
+-%}
+
+{%- render 'drawer-cart'-%}
+
+{% schema %}
+{
+"name": {
+"en": "Header"
+},
+"settings": [
+{
+"type": "link_list",
+"id": "product_menu_link_list",
+"label": "Navigation",
+"default": "main-menu"
+},
+{
+"type": "link_list",
+"id": "main_menu_link_list",
+"label": "Navigation",
+"default": "main-menu"
+},
+{
+"type": "image_picker",
+"id": "logo",
+"label": {
+"en": "Logo image"
+}
+},
+{
+"type": "image_picker",
+"id": "logo-close",
+"label": {
+"en": "Drawer Menu Close Image Logo"
+}
+},
+{
+"type": "image_picker",
+"id": "menuImage",
+"label": {
+"en": "Menu image"
+}
+},
+{
+"type": "image_picker",
+"id": "cart",
+"label": {
+"en": "Cart image"
+}
+},
+{
+"type": "color",
+"id": "link-color",
+"label": "Link Color",
+"default": "#000000"
+}
+]
+}
+{% endschema %}
+
+<style>
+    @media screen and (max-width:575px) {
+            {
+            % if shop.customer_accounts_enabled %
+        }
+
+        .menu-image-div {
+            width: 25%;
+        }
+
+        .cart-image-div {
+            width: 25%;
+        }
+
+        .logo-image-div {
+            width: 25%;
+        }
+
+        .account-div {
+            width: 25%;
+        }
+
+            {
+            % else %
+        }
+
+        .menu-image-div {
+            width: 25%;
+        }
+
+        .cart-image-div {
+            width: 25%;
+        }
+
+        .logo-image-div {
+            width: 50%;
+        }
+
+            {
+            % endif %
+        }
+    }
+</style>

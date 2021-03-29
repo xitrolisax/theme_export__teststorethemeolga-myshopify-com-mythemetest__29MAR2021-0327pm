@@ -1,0 +1,81 @@
+<div class="drawer-cart-container" id="drawer-cart-container">
+    <div class="cart-nav-wrapper">
+        <img class="darklogo" src="https://cdn.shopify.com/s/files/1/0558/3365/7515/files/darklogo.png?v=1616954899" />
+        <button class="close-cart-button" id="close-cart-button">
+            <img src="https://cdn.shopify.com/s/files/1/0558/3365/7515/files/arrow_copy_2.png?v=1616954444" />
+        </button>
+    </div>
+    {% if cart.item_count > 0 %}
+
+    <div class="in-cart-items-wrapper">
+
+
+        <table class="cart-table">
+
+            <tbody>
+                {% for item in cart.items %}
+                <tr class="item-container">
+                    <td>
+                        <a href="{{ item.url | within: collections.all }}">
+                            <img src="{{ item | img_url: 'x78' }}" alt="{{ item.title | escape }}">
+                        </a>
+                    </td>
+                    <td>
+                        <a class="item-title" href="{{ item.url }}">{{ item.product.title }}</a>
+                        <br>
+                        <p clas="item-variant"> {{ item.variant.title }}, {{ item.variant.price | money }} </p>
+
+                        <div class="input-group">
+
+                            <button class="item-sub" id="item-sub" name="{{ item.key }}">
+                                -
+                            </button>
+
+                            <input class="item-qty" name="updates[]" id="{{ item.key }}" value="{{ item.quantity }}" min="0">
+
+                            <button class="item-app" id="item-app" name="{{ item.key }}">
+                                +
+                            </button>
+
+                        </div>
+                    </td>
+                    <td>
+                        <a href="/cart/change?line={{ forloop.index }}&quantity=0" rel="{{ item.id }}">
+                            <img src="https://cdn.shopify.com/s/files/1/0558/3365/7515/files/Group_22.png?v=1616957637" />
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    <div class="subtotal-wrapper">
+        <div class="line"></div>
+        <p class="subtotal">subtotal</p>
+        <p class="subtotal-price">{{ cart.total_price | money }}</p>
+    </div>
+
+    <div class="checkout-btn">
+        <form method="post" action="/checkout">
+            <div class="cart-wrapper">
+
+                <button type="submit" name="checkout" class="checkout-button">
+
+                </button>
+
+            </div>
+        </form>
+        <div class="line2"></div>
+    </div>
+
+    {% else %}
+    <div class="empty-cart-wrapper">
+        <h2 class="empty-cart-label">Your cart is thirsty.</h2>
+
+        <div class="empty-cart-div"></div>
+    </div>
+    {% endif %}
+
+
+</div>
